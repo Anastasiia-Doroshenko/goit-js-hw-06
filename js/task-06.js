@@ -1,0 +1,13 @@
+const inputEl = document.querySelector('input#validation-input');
+
+inputEl.addEventListener('blur', onInputBlur);
+
+function onInputBlur(event, onInputBlurRemove) {
+    if (event.currentTarget.value.length === Number(inputEl.dataset.length)) {
+        inputEl.classList.add('valid');
+    }
+
+    else if (event.currentTarget.value.length !== Number(inputEl.dataset.length)) {
+        inputEl.classList.add('invalid');
+    }
+}

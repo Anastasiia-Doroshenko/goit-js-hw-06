@@ -23,11 +23,15 @@ button {
   cursor: pointer;
 }
 
-
+img {
+  width: 420px;
+  object-fit: cover;
+}
 
 .gallery {
   list-style: none;
 
   display: flex;
   justify-content: space-evenly;
+  
 }

@@ -1,10 +1,13 @@
-const refs = {
-    inpurEl: document.querySelector('#name-input'),
-    spanEl: document.querySelector('#name-output'),
-};
 
-const onInputChange = (event) =>
-    refs.inpurEl.value != ''
-        ? refs.spanEl.textContent = refs.inpurEl.value
-        : refs.spanEl.textContent = "Anonymous";
-refs.inpurEl.addEventListener('input', onInputChange);
+const nameInput = document.querySelector("#name-input");
+const greeting = document.querySelector("#name-output");
+
+nameInput.addEventListener("input", changeName);
+
+function changeName(event){
+    greeting.textContent = event.currentTarget.value;
+
+    if (event.currentTarget.value.trim() === ""){
+        greeting.textContent = "Anonymous";
+    }
+}
